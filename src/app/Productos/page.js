@@ -3,8 +3,21 @@ import MiniTitle from "../Components/MiniTitle"
 import Filtro from "../Components/Filtro"
 import Producto from "../Components/Producto"
 import { API_FAKE_STORE } from "../contants"
-export default  function page(params) {
 
+const getProducts = async () =>{
+    const response = await fetch ('https://fakestoreapi.com/products')
+
+    if(!response.ok){
+        throw new Error('Fallo la obtención de datos')
+    }
+    return response.json()
+}
+
+export default async function page(params) {
+       
+
+        const data = await getProducts()
+       
     return(
         <div >
             <div className="p-5">
@@ -14,15 +27,15 @@ export default  function page(params) {
             <div className="bg-gray-100 rounded-lg">
             <br/>
             <Filtro params={['Precio mas alto primero', 'Populares','Nuevos', 'Nuestros tuestes']} />
-            <div className="flex  flex-wrap justify-center ">
-            <Producto params={'ETIOPIA'} />
-            <Producto params={'ETIOPIA'} />
-            <Producto params={'ETIOPIA'} />
-            <Producto params={'ETIOPIA'} />
-            <Producto params={'ETIOPIA'} />
-            <Producto params={'ETIOPIA'} />
+            <ul className="flex  flex-wrap justify-center ">
+            {data.map((producto)=>{
+                
+                return(
+                    <Producto titulo={`${producto.id}`} precio={`USD ${producto.price}`}/>
+                )
+            })}
            
-            </div>
+            </ul>
             </div>
         </div>
         

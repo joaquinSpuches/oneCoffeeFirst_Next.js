@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Precio from "./Precio"
 import Text from "./Text"
 import Link from "next/link"
@@ -8,8 +9,10 @@ export default function Producto({params}) {
 <Link href= {`/Productos/${params}`} >
              <div className="bg-white  w-full rounded-md min-w-1/2 max-w-64 ">
              <div className="flex justify-center">
-              <img priority='true' className="p-8 outline-8 min-w-20 max-w-36 "
+              <Image  className="p-8 outline-8 min-w-20 max-w-36 "
                 alt='producto'
+                width={250}
+                height={250}
                 src='https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/main/Front/public/Asset%204.png'
                 />
               </div>

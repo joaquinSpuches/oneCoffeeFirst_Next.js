@@ -8,14 +8,16 @@ export default function ProductoDestacado({params}) {
             <div className="text-2xl font-extrabold">
               <h1> ETIOPIA <br/> ORIGEN <br/> ACACIA  </h1> 
               </div>
-                <Precio text='USD 9,99' />
+                <Precio className='text-red-500' text='USD 9,99' />
               
             </div>
            <div className="flex justify-center">
-           <img 
+           <Image 
+                priority
                 alt='producto'
                 src={'https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/main/Front/public/Asset%204.png'}     
-                className="w-1/2"          
+                width={300}
+                height={300}        
                 />
            </div>
             </Link>

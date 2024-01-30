@@ -10,7 +10,7 @@ export default function Novedades() {
             <div className="p-5 w-full">
                 <Filtro  params={['Origen','Blend','Accesorios', 'Todos']} />   
              </div>   
-        <ProductoDestacado />
+        <ProductoDestacado params='Etiopia' />
         <Link href='/Productos' className='justify-between w-full pt-3 px-6 flex ' >
             <Text text='Origen'/>
             <p className=" text-gray-400 ">Ver todo</p>

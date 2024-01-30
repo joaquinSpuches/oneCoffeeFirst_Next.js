@@ -2,7 +2,9 @@ import Title from "../Components/Title"
 import MiniTitle from "../Components/MiniTitle"
 import Filtro from "../Components/Filtro"
 import Producto from "../Components/Producto"
-export default function page(params) {
+import { API_FAKE_STORE } from "../contants"
+export default  function page(params) {
+
     return(
         <div >
             <div className="p-5">

@@ -3,7 +3,7 @@ import Precio from "../Components/Precio"
 import Link from "next/link"
 export default function ProductoDestacado({params}) {
         return(
-            <Link href='/Productos/DetalleProducto' className="flex justify-between items-center p-10 bg-white rounded-md mx-6">
+            <Link href={`/Productos/${params}`} className="flex justify-between items-center p-10 bg-white rounded-md mx-6">
             <div>
             <div className="text-2xl font-extrabold">
               <h1> ETIOPIA <br/> ORIGEN <br/> ACACIA  </h1> 

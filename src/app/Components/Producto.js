@@ -5,7 +5,7 @@ export default function Producto({params}) {
         return(
           <div className=" self-center w-1/2 border-4 border-gray-100">  
 
-<Link href='/Productos/DetalleProducto' >
+<Link href= {`/Productos/${params}`} >
              <div className="bg-white  w-full rounded-md min-w-1/2 max-w-64 ">
              <div className="flex justify-center">
               <img priority='true' className="p-8 outline-8 min-w-20 max-w-36 "

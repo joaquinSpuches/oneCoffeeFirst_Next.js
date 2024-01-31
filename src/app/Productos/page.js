@@ -31,7 +31,7 @@ export default async function page(params) {
             {data.map((producto)=>{
                 
                 return(
-                    <Producto titulo={`${producto.id}`} precio={`USD ${producto.price}`}/>
+                    <Producto titulo={producto.id} precio={`USD ${producto.price}`} />
                 )
             })}
            

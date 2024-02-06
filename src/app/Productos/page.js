@@ -2,10 +2,10 @@ import Title from "../Components/Title"
 import MiniTitle from "../Components/MiniTitle"
 import Filtro from "../Components/Filtro"
 import Producto from "../Components/Producto"
-import { API_FAKE_STORE } from "../contants"
+
 
 const getProducts = async () =>{
-    const response = await fetch ('https://fakestoreapi.com/products')
+    const response = await fetch ('http://localhost:3000/api/productos')
 
     if(!response.ok){
         throw new Error('Fallo la obtención de datos')
@@ -15,9 +15,12 @@ const getProducts = async () =>{
 
 export default async function page(params) {
        
-
+    const response = await fetch('http://Localhost:3000/api/productos', 
+    {cache: 'no-store'}).then (r =>r.json())
+  
+  
         const data = await getProducts()
-       
+       console.log(data[1]);
     return(
         <div >
             <div className="p-5">
@@ -31,7 +34,7 @@ export default async function page(params) {
             {data.map((producto)=>{
                 
                 return(
-                    <Producto titulo={producto.id} precio={`USD ${producto.price}`} />
+                    <Producto titulo={producto.titulo} precio={`USD ${producto.precio}  ` }id={producto.id} />
                 )
             })}
            

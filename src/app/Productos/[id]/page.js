@@ -4,19 +4,10 @@ import CarruselProductos from "../../Components/CarruselProductos";
 import Text from "../../Components/Text";
 import Image from "next/image";
 import Title from "../../Components/Title";
-const getProductsById = async (id)=>{
-    const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-
-    if(!response.ok){
-        throw new Error ('No se pudo hacer el fetch')
-    }
-    return response.json()
-}
-
-const Productos =async ({params})=> {
-    const {id}  = params
-    const producto = await getProductsById(id)
-    console.log(producto);
+const Productos =async (id)=> {
+    
+    const producto = await getProducts()
+    console.log(producto[id]);
    
 
     return (
@@ -24,8 +15,8 @@ const Productos =async ({params})=> {
         <div key={id} className=" p-5 bg-white flex flex-col items-center "> 
            
         <div className="pb-10  ">
-        <Precio text={`USD ${producto.price}`} />  
-        <Title text={`${producto.id}`}/>
+        <Precio text={`USD ${producto.precio}`} />  
+        <Title text={`${producto.titulo}`}/>
         <div className=" mb-7 rounded-md bg-gray-100 flex justify-center px-10 ">
         <Image alt="DetalleProducto" src={'https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/main/Front/public/Asset%204.png'}  
         className="p-12"
@@ -45,6 +36,15 @@ const Productos =async ({params})=> {
     </div>
     )
 }
+const getProducts = async () =>{
+    const response = await fetch ('http://localhost:3000/api/productos')
+
+    if(!response.ok){
+        throw new Error('Fallo la obtención de datos')
+    }
+    return response.json()}
+
+
 
 
 export default Productos

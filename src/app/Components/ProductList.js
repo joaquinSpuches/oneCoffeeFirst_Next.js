@@ -4,14 +4,14 @@ export default async function ProductList(params) {
     {cache: 'no-store'}).then (r =>r.json())
 
     return (
-        <div>
-            <ul>
-                <div>
-                    {response.map(e=>{
-                        return <p key={e.id}>{e.titulo}</p>
-                    })}
-                </div>
-            </ul>
-        </div>
-    )    
+      <div>
+        <ul>
+          <div>
+            {response.map((e) => {
+              return <p key={e.id}>{e.titulo}</p>;
+            })}
+          </div>
+        </ul>
+      </div>
+    );    
 };

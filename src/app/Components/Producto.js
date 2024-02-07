@@ -2,10 +2,11 @@ import Image from "next/image"
 import Precio from "./Precio"
 import Text from "./Text"
 import Link from "next/link"
+import { randomInt } from "crypto";
 export default function Producto({titulo, precio,id}) {
-
+        
         return(
-          <div className=" self-center w-1/2 border-4 border-gray-100">  
+          <div key={Math.random()} className=" self-center w-1/2 border-4 border-gray-100">  
 
 <Link href= {`/Productos/${id}`} >
              <div className="bg-white  w-full rounded-md min-w-1/2 max-w-64 ">
@@ -17,7 +18,7 @@ export default function Producto({titulo, precio,id}) {
                 src='https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/main/Front/public/Asset%204.png'
                 />
               </div>
-                <div className="p-3 max-w-36 min-w-28">
+                <div className="p-3 max-w-44 min-w-28">
                 <Text  text={titulo} />
                 <Precio text={precio} />
 

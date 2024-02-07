@@ -16,11 +16,15 @@ const getProducts = async () =>{
 export default async function page(params) {
        
     const response = await fetch('http://Localhost:3000/api/productos', 
-    {cache: 'no-store'}).then (r =>r.json())
+    {cache: 'force-cache',
+    next: {
+        tags:['productos']
+        }
+    }).then (r =>r.json())
   
   
         const data = await getProducts()
-       console.log(data[1]);
+     
     return(
         <div >
             <div className="p-5">
@@ -34,7 +38,7 @@ export default async function page(params) {
             {data.map((producto)=>{
                 
                 return(
-                    <Producto titulo={producto.titulo} precio={`USD ${producto.precio}  ` }id={producto.id} />
+                 <li key={producto.id}>   <Producto titulo={producto.titulo} precio={`USD ${producto.precio}  ` } id={producto.id} /></li>
                 )
             })}
            

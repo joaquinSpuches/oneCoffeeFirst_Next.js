@@ -7,7 +7,7 @@ export default function Filtro({params}) {
         <ul className=" flex overflow-x-scroll whitespace-nowrap ">
             {params.map((e)=>{
                     return(
-                        <Link href={`/${e}`} className='px-5 text-gray-400'>{e}</Link>
+                        <Link href={`/Categorias/${e}`} className='px-5 text-gray-400'>{e}</Link>
                     )
             })}
         </ul>

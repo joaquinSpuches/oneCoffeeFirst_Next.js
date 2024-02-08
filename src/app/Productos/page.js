@@ -14,7 +14,7 @@ const getProducts = async () => {
 
 export default async function page(params) {
   const response = await fetch("http://Localhost:3000/api/productos", {
-    cache: "force-cache",
+    cache: "no-cache",
   }).then((r) => r.json());
 
   const data = await getProducts();

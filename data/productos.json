@@ -4,69 +4,127 @@
         "titulo": "Café de Colombia",
         "imagen": "https://i.imgur.com/1JjZK8U.jpg",
         "precio": "$10.99",
-        "descripcion": "Café de Colombia cultivado en la región de Antioquia. Con notas de chocolate y caramelo."
+        "descripcion": "Café de Colombia cultivado en la región de Antioquia. Con notas de chocolate y caramelo.",
+        "categoria": "Origen"
     },
     {
         "id": 2,
         "titulo": "Café de Etiopía",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$12.99",
-        "descripcion": "Café de Etiopía cultivado en la región de Yirgacheffe. Con notas de frutas rojas y cítricos."
+        "descripcion": "Café de Etiopía cultivado en la región de Yirgacheffe. Con notas de frutas rojas y cítricos.",
+        "categoria": "Origen"
     },
     {
         "id": 3,
         "titulo": "Café de Guatemala",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$11.99",
-        "descripcion": "Café de Guatemala cultivado en la región de Huehuetenango. Con notas de chocolate y frutos secos."
+        "descripcion": "Café de Guatemala cultivado en la región de Huehuetenango. Con notas de chocolate y frutos secos.",
+        "categoria": "Origen"
     },
     {
         "id": 4,
         "titulo": "Café de Kenia",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$13.99",
-        "descripcion": "Café de Kenia cultivado en la región de Nyeri. Con notas de frutas tropicales y cítricos."
+        "descripcion": "Café de Kenia cultivado en la región de Nyeri. Con notas de frutas tropicales y cítricos.",
+        "categoria": "Origen"
     },
     {
         "id": 5,
         "titulo": "Café de México",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$9.99",
-        "descripcion": "Café de México cultivado en la región de Chiapas. Con notas de chocolate y nueces."
+        "descripcion": "Café de México cultivado en la región de Chiapas. Con notas de chocolate y nueces.",
+        "categoria": "Origen"
     },
     {
         "id": 6,
         "titulo": "Café de Nicaragua",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$10.99",
-        "descripcion": "Café de Nicaragua cultivado en la región de Jinotega. Con notas de chocolate y caramelo."
+        "descripcion": "Café de Nicaragua cultivado en la región de Jinotega. Con notas de chocolate y caramelo.",
+        "categoria": "Origen"
     },
     {
         "id": 7,
         "titulo": "Café de Panamá",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$14.99",
-        "descripcion": "Café de Panamá cultivado en la región de Boquete. Con notas de frutas rojas y cítricos."
+        "descripcion": "Café de Panamá cultivado en la región de Boquete. Con notas de frutas rojas y cítricos.",
+        "categoria": "Origen"
     },
     {
         "id": 8,
         "titulo": "Café de Perú",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$11.99",
-        "descripcion": "Café de Perú cultivado en la región de Cajamarca. Con notas de chocolate y frutos secos."
+        "descripcion": "Café de Perú cultivado en la región de Cajamarca. Con notas de chocolate y frutos secos.",
+        "categoria": "Origen"
     },
     {
         "id": 9,
         "titulo": "Café de Tanzania",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$12.99",
-        "descripcion": "Café de Tanzania cultivado en la región de Arusha. Con notas de frutas tropicales y cítricos."
+        "descripcion": "Café de Tanzania cultivado en la región de Arusha. Con notas de frutas tropicales y cítricos.",
+        "categoria": "Origen"
     },
     {
         "id": 10,
         "titulo": "Café de Yemen",
         "imagen": "https://i.imgur.com/5zXt6JL.jpg",
         "precio": "$15.99",
-        "descripcion": "Café de Yemen cultivado en la región de Sana'a. Con notas de chocolate y nueces."
+        "descripcion": "Café de Yemen cultivado en la región de Sana'a. Con notas de chocolate y nueces.",
+        "categoria": "Origen"
+    },
+    {
+        "id": 11,
+        "titulo": "Blend Premium",
+        "imagen": "https://example.com/blend_premium.jpg",
+        "precio": "$16.99",
+        "descripcion": "Mezcla de granos seleccionados de Colombia, Guatemala y Etiopía. Con notas equilibradas de chocolate, frutos secos y cítricos.",
+        "categoria": "Blend"
+    },
+    {
+        "id": 12,
+        "titulo": "Blend Especial",
+        "imagen": "https://example.com/blend_especial.jpg",
+        "precio": "$14.99",
+        "descripcion": "Mezcla de granos de México, Nicaragua y Panamá. Aromas intensos con notas de chocolate y frutas tropicales.",
+        "categoria": "Blend"
+    },
+    {
+        "id": 13,
+        "titulo": "Blend Suave",
+        "imagen": "https://example.com/blend_suave.jpg",
+        "precio": "$12.99",
+        "descripcion": "Mezcla suave de granos de Perú, Tanzania y Kenia. Con cuerpo ligero y notas sutiles de chocolate y nueces.",
+        "categoria": "Blend"
+    },
+    {
+        "id": 14,
+        "titulo": "Taza para café",
+        "imagen": "https://example.com/taza_cafe.jpg",
+        "precio": "$7.99",
+        "descripcion": "Taza de cerámica con diseño elegante para disfrutar tu café favorito.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 15,
+        "titulo": "Molinillo de café",
+        "imagen": "https://example.com/molinillo_cafe.jpg",
+        "precio": "$29.99",
+        "descripcion": "Molinillo eléctrico para moler granos de café fresco en casa.",
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 16,
+        "titulo": "Cuchara dosificadora",
+        "imagen": "https://example.com/cuchara_dosificadora.jpg",
+        "precio": "$4.99",
+        "descripcion": "Cuchara medidora para dosificar la cantidad perfecta de café en tu preparación.",
+        "categoria": "Accesorios"
     }
 ]

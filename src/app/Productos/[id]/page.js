@@ -9,13 +9,11 @@ const Productos = async (id) => {
 
   const data = await fetch("http://Localhost:3000/api/productos", {
     cache: "force-cache",
-    next: {
-      tags: ["productos"],
-    },
+   
   }).then((r) => r.json());
 
   const producto = data[productid];
-
+  console.log(producto);
   return (
     <div key={id} className=" p-5 bg-white flex flex-col items-center ">
       <div className="pb-10  ">

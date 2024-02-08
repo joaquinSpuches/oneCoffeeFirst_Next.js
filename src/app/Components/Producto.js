@@ -2,8 +2,9 @@ import Image from "next/image";
 import Precio from "./Precio";
 import Text from "./Text";
 import Link from "next/link";
-import { randomInt } from "crypto";
+
 export default function Producto({ titulo, precio, id }) {
+  
   return (
     <div
       key={Math.random()}

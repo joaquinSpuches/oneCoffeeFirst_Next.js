@@ -6,9 +6,5 @@ const sleep = (timer) => {
   return new Promise((resolve) => setTimeout(resolve, timer));
 };
 export async function GET() {
-  await sleep(1000);
-
-  revalidateTag("productos");
-
   return NextResponse.json(mockData);
 }

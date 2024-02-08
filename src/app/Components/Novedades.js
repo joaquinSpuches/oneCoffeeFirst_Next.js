@@ -18,7 +18,7 @@ export default function Novedades() {
         <Text text="Origen" />
         <p className=" text-gray-400 ">Ver todo</p>
       </Link>
-      <CarruselProductos titulo="ETIOPIA" precio={'USD ' + 9.99} />
+      <CarruselProductos titulo="ETIOPIA" precio={"USD " + 9.99} id={1} />
       <Link
         href={"/Productos"}
         className="justify-between w-full pt-3 px-6 flex "
@@ -26,7 +26,7 @@ export default function Novedades() {
         <Text text="Destacados de origen" />
         <p className=" text-gray-400 ">Ver todo</p>
       </Link>
-      <CarruselProductos titulo="ETIOPIA" precio={9.99} />
+      <CarruselProductos titulo="ETIOPIA" precio={9.99} id={1} />
     </div>
   );
 }

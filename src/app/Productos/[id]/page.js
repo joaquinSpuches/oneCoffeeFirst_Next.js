@@ -5,15 +5,16 @@ import Image from "next/image";
 
 import Title from "../../Components/Title";
 const Productos = async (id) => {
-  const productid = id.params.id - 1;
+  const productid = id.params.id ;
 
   const data = await fetch("http://Localhost:3000/api/productos", {
-    cache: "force-cache",
-   
+    cache: "no-cache",
   }).then((r) => r.json());
 
-  const producto = data[productid];
-  console.log(producto);
+  const filtrado = data.filter((e)=> e.id == productid );
+  const producto = filtrado[0]
+
+
   return (
     <div key={id} className=" p-5 bg-white flex flex-col items-center ">
       <div className="pb-10  ">

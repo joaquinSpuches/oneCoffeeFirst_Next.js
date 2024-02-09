@@ -4,7 +4,8 @@ import Filtro from "../Components/Filtro";
 import Producto from "../Components/Producto";
 
 const getProducts = async () => {
-  const response = await fetch("http://localhost:3000/api/productos");
+  const response = await fetch("http://localhost:3000/api/productos", 
+  {cache: 'no-store'});
 
   if (!response.ok) {
     throw new Error("Fallo la obtención de datos");

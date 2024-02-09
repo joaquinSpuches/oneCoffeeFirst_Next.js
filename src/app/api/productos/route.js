@@ -1,10 +1,14 @@
 import { NextResponse } from "next/server";
-import mockData from "../../../../data/productos";
-import { revalidateTag, revalidatePath } from "next/cache";
+import { collection, getDocs, query, where } from "firebase/firestore"; 
+import { db } from '../../../../firebase/config';
 
-const sleep = (timer) => {
-  return new Promise((resolve) => setTimeout(resolve, timer));
-};
 export async function GET() {
-  return NextResponse.json(mockData);
+  const productosRef = collection(db, 'productos');
+  const q = query(productosRef)
+  const querySnapshot = await getDocs(q);
+
+  const docs = querySnapshot.docs.map(doc => doc.data());
+
+  
+  return NextResponse.json(docs);
 }

@@ -1,5 +1,5 @@
-import CarruselProductos from "@/app/Components/CarruselProductos"
-import Text from "@/app/Components/Text"
+import CarruselProductos from "../../../Components/CarruselProductos"
+import Text from "../../../Components/Text"
 import Link from 'next/link'
 export default function layout({children}) {
     return(

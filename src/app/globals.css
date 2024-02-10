@@ -20,6 +20,9 @@ main {
   background-color: #ECDCC8;
   
 }
+body::-webkit-scrollbar {
+	display: none;
+  }
 /* div.arrow {
 	width: 2vmin;
 	height: 2vmin;

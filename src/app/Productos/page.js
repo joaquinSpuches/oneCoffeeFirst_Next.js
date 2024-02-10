@@ -1,20 +1,17 @@
-import Title from "../Components/Title";
-import MiniTitle from "../Components/MiniTitle";
-import Filtro from "../Components/Filtro";
-import Producto from "../Components/Producto";
+import Title from "../../Components/Title";
+import MiniTitle from "../../Components/MiniTitle";
+import Filtro from "../../Components/Filtro";
+import Producto from "../../Components/Producto";
 
 const getProducts = async () => {
-  const response = await fetch("http://localhost:3000/api/productos", 
-  {cache: 'no-store'});
+  const response = await fetch("http://localhost:3000/api/productos", {
+    cache: "no-store",
+  });
 
-  if (!response.ok) {
-    throw new Error("Fallo la obtención de datos");
-  }
   return response.json();
 };
 
 export default async function page(params) {
- 
   const data = await getProducts();
 
   return (

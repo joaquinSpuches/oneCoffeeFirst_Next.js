@@ -14,7 +14,7 @@ const FormularioContacto = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:3000/api/contacto", {
+    await fetch("http://localhost:3000/api/productos", {
       cache: "no-store",
       method: "POST",
       body: JSON.stringify(values),
@@ -26,17 +26,35 @@ const FormularioContacto = () => {
       <input
         className="m-3"
         required
-        placeholder="titulo"
-        name="titulo"
+        placeholder="categoria"
+        name="categoria"
         onChange={handleChange}
       />
-      <image />
       <input
         className="m-3"
         required
-        type='number'
-        placeholder="precio"
-        name="precio"
+        placeholder="descripcion"
+        name="descripcion"
+        onChange={handleChange}
+      />
+      <input
+        className="m-3"
+        required
+        type="number"
+        placeholder="id"
+        name="id"
+        onChange={handleChange}
+      />
+      <input type="number" 
+      name="precio" 
+      placeholder="precio" 
+      className="m-3" />
+      <input
+        className="m-3"
+        required
+        type="text"
+        placeholder="titulo"
+        name="titulo"
         onChange={handleChange}
       />
 

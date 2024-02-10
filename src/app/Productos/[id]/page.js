@@ -1,18 +1,17 @@
-import MiniTitle from "../../Components/MiniTitle";
-import Precio from "../../Components/Precio";
-import Text from "../../Components/Text";
+import MiniTitle from "../../../Components/MiniTitle";
+import Precio from "../../../Components/Precio";
+import Text from "../../../Components/Text";
 import Image from "next/image";
 
-import Title from "../../Components/Title";
+import Title from "../../../Components/Title";
 const Productos = async (id) => {
   const productid = id.params.id ;
 
-  const data = await fetch("http://Localhost:3000/api/productos", {
+  const data = await fetch(`http://Localhost:3000/api/productos/${productid}`, {
     cache: "no-cache",
   }).then((r) => r.json());
 
-  const filtrado = data.filter((e)=> e.id == productid );
-  const producto = filtrado[0]
+  const producto = data
 
 
   return (

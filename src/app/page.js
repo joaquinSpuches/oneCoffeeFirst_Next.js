@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Novedades from "./Components/Novedades";
-import Title from "./Components/Title";
-import Text from "./Components/Text";
-import Header from "./Components/Header";
-import Navegador from "./Components/Navegador";
+import Novedades from "../Components/Novedades";
+import Title from "../Components/Title";
+import Text from "../Components/Text";
+import Header from "../Components/Header";
+import Navegador from "../Components/Navegador";
 
 
 export default function Home() {

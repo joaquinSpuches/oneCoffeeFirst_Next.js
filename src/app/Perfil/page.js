@@ -1,6 +1,6 @@
 import Link from "next/link";
-import MiniTitle from "../Components/MiniTitle"
-import Text from "../Components/Text";
+import MiniTitle from "../../Components/MiniTitle"
+import Text from "../../Components/Text";
 import Image from "next/image";
 
 export default function (params) {

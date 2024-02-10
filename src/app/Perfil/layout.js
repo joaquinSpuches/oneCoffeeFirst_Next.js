@@ -1,5 +1,5 @@
 
-import HeaderDetalle from "../Components/HeaderDetalle";
+import HeaderDetalle from "../../Components/HeaderDetalle";
 
 export default function layout({children}) {
     return(

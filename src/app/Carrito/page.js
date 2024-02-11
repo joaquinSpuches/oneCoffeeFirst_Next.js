@@ -8,8 +8,7 @@ export default function page(params) {
             <Title text='Carrito' />
             </div>
            <CarritoProduct />
-           <CarritoProduct />
-           <CarritoProduct />
+          
     
         </div>
     )

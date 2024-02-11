@@ -12,7 +12,7 @@ export default function Novedades() {
       </div>
       <ProductoDestacado params="Etiopia" />
       <Link
-        href="/Productos"
+        href="/Categorias/Origen"
         className="justify-between w-full pt-3 px-6 flex "
       >
         <Text text="Origen" />
@@ -20,7 +20,7 @@ export default function Novedades() {
       </Link>
       <CarruselProductos titulo="ETIOPIA" precio={"USD " + 9.99} id={1} />
       <Link
-        href={"/Productos"}
+        href={"/Categorias/Todos"}
         className="justify-between w-full pt-3 px-6 flex "
       >
         <Text text="Destacados de origen" />

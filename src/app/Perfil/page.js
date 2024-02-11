@@ -3,7 +3,7 @@ import MiniTitle from "../../Components/MiniTitle"
 import Text from "../../Components/Text";
 import Image from "next/image";
 
-export default function (params) {
+export default function page (params) {
     
     return(
         <div className="mt-12">

@@ -1,17 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import BotonAtras from "./BotonAtras";
+import CarritoCounter from "./CarritoCounter";
+
 export default function HeaderDetalle() {
   return (
     <header className="flex justify-between items-center h-12">
       <div className="p-5">
-      <BotonAtras />
-
+        <BotonAtras />
       </div>
       <Link href="/">
         <Image alt="logo" src={"/logo.svg"} width={100} height={100} />
       </Link>
-
       <Link href={"/Carrito"}>
         <div className="p-5">
           <Image
@@ -21,8 +21,8 @@ export default function HeaderDetalle() {
             }
             width={25}
             height={25}
-            
           />
+          <CarritoCounter />
         </div>
       </Link>
     </header>

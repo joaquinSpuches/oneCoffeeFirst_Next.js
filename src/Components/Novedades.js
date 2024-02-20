@@ -3,13 +3,14 @@ import ProductoDestacado from "./ProductoDestacado";
 import CarruselProductos from "./CarruselProductos";
 import Text from "./Text";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Novedades() {
   return (
     <div className="flex flex-col items-center w-screen rounded-lg min-h-screen bg-gray-100">
-      <div className="p-5 w-full">
+      <nav className="p-5 w-full">
         <Filtro params={["Origen", "Blend", "Accesorios", "Todos"]} />
-      </div>
+      </nav>
       <ProductoDestacado params="Etiopia" />
       <Link
         href="/Categorias/Origen"
@@ -18,7 +19,9 @@ export default function Novedades() {
         <Text text="Origen" />
         <p className=" text-gray-400 ">Ver todo</p>
       </Link>
+      <Suspense fallback={<div>Cargando...</div>}>
       <CarruselProductos titulo="ETIOPIA" precio={"USD " + 9.99} id={1} />
+      </Suspense>
       <Link
         href={"/Categorias/Todos"}
         className="justify-between w-full pt-3 px-6 flex "
@@ -26,7 +29,9 @@ export default function Novedades() {
         <Text text="Destacados de origen" />
         <p className=" text-gray-400 ">Ver todo</p>
       </Link>
-      <CarruselProductos titulo="ETIOPIA" precio={9.99} id={1} />
+      <Suspense fallback={<div>Cargando...</div>}>
+      <CarruselProductos titulo="ETIOPIA" precio={"USD " + 9.99} id={1} />
+      </Suspense>
     </div>
   );
 }

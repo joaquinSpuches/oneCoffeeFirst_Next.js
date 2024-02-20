@@ -1,10 +1,27 @@
 "use client";
 import { useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { db, storage } from "@/firebase/config";
 
+const crearProducto = async (values, file) => {
+  const storageRef = ref(storage, values.id);
+  const fileSnapshot = await uploadBytes(storageRef, file);
+  const filerURL = await getDownloadURL(fileSnapshot.ref);
+
+  const docRef = doc(db, "productos", values.id);
+  return setDoc(docRef, {
+    ...values,
+    image: filerURL,
+  }).then(console.log("producto agregado!"));
+};
 const FormularioContacto = () => {
+  const [file, setFile] = useState(null);
   const [values, setValues] = useState({
-    email: "",
-    texto: "",
+    categoria: "",
+    descripcion: "",
+    id: "",
+    titulo: "",
   });
   const handleChange = (e) => {
     setValues({
@@ -12,13 +29,10 @@ const FormularioContacto = () => {
       [e.target.name]: e.target.value,
     });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:3000/api/productos", {
-      cache: "no-store",
-      method: "POST",
-      body: JSON.stringify(values),
-    });
+    await crearProducto(values,file);
   };
 
   return (
@@ -30,6 +44,7 @@ const FormularioContacto = () => {
         name="categoria"
         onChange={handleChange}
       />
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
       <input
         className="m-3"
         required
@@ -45,10 +60,7 @@ const FormularioContacto = () => {
         name="id"
         onChange={handleChange}
       />
-      <input type="number" 
-      name="precio" 
-      placeholder="precio" 
-      className="m-3" />
+      <input type="number" name="precio" placeholder="precio" className="m-3" />
       <input
         className="m-3"
         required

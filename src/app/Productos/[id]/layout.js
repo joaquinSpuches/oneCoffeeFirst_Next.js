@@ -2,6 +2,7 @@ import HeaderDetalle from "@/Components/HeaderDetalle";
 import CarruselProductos from "../../../Components/CarruselProductos";
 import Text from "../../../Components/Text";
 import Link from "next/link";
+import { Suspense } from "react";
 export default function layout({ children }) {
   return (
     <div>
@@ -18,7 +19,9 @@ export default function layout({ children }) {
           </Link>
         </div>
 
-        <CarruselProductos titulo="Guatemala" precio='9.99' id='2' />
+       <Suspense fallback={<p>cargado...</p>}>
+       <CarruselProductos titulo="Guatemala" precio='9.99' id='2' />
+       </Suspense>
       </div>
     </div>
   );

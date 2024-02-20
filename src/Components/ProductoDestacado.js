@@ -7,7 +7,8 @@ export default function ProductoDestacado({ params }) {
       href={`/Productos/1`}
       className="flex justify-between items-center p-10 bg-white rounded-md mx-6"
     >
-      <div>
+      <article>
+        <div>
         <div className="text-2xl font-extrabold">
           <h1>
             {" "}
@@ -24,9 +25,10 @@ export default function ProductoDestacado({ params }) {
             "https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/main/Front/public/Asset%204.png"
           }
           width={300}
-          height={300}
+          height={479}
         />
-      </div>
+        </div>
+      </article>
     </Link>
   );
 }

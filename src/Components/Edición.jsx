@@ -1,15 +1,18 @@
 'use client'
-
 import { useState } from "react";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 
-const editarProducto = async function (id, titulo, precio) {
+const categorias = ["Blend", "Origen", "Accesorios"];
+
+const editarProducto = async function (id, titulo, precio, categoria, descripcion) {
   try {
     const docRef = doc(db, "productos", id.toString());
     await updateDoc(docRef, {
       titulo: titulo,
-      precio: precio // Asegúrate de tener un campo "precio" en tu base de datos
+      precio: precio,
+      categoria: categoria,
+      descripcion: descripcion // Asegúrate de tener un campo "descripcion" en tu base de datos
     });
     return true; // Éxito en la actualización
   } catch (error) {
@@ -21,7 +24,9 @@ const editarProducto = async function (id, titulo, precio) {
 export default function Edición(params) {
   const producto = params.producto;
   const [titulo, setTitulo] = useState(producto.titulo);
-  const [precio, setPrecio] = useState(producto.precio); // Agregar estado para el precio
+  const [precio, setPrecio] = useState(producto.precio);
+  const [categoria, setCategoria] = useState(producto.categoria);
+  const [descripcion, setDescripcion] = useState(producto.descripcion);
 
   const handleTituloChange = (event) => {
     setTitulo(event.target.value);
@@ -31,13 +36,21 @@ export default function Edición(params) {
     setPrecio(event.target.value);
   };
 
+  const handleCategoriaChange = (event) => {
+    setCategoria(event.target.value);
+  };
+
+  const handleDescripcionChange = (event) => {
+    setDescripcion(event.target.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const confirmResult = window.confirm("¿Estás seguro de que deseas actualizar el nombre y el precio del producto?" );
+    const confirmResult = window.confirm("¿Estás seguro de que deseas actualizar el producto?" );
     
     if (confirmResult) {
-      const updated = await editarProducto(producto.id, titulo, precio);
+      const updated = await editarProducto(producto.id, titulo, precio, categoria, descripcion);
       if (updated) {
         window.location.href = "/Perfil/Admin/editar";
       } else {
@@ -63,13 +76,42 @@ export default function Edición(params) {
       <div>
         <label htmlFor="precio">Precio:</label>
         <input
-          type="text  "
+          type="text"
           id="precio"
           className="text-gray-400"
           name="price"
           placeholder={producto.precio}
           value={precio}
           onChange={handlePrecioChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="categoria">Categoría:</label>
+        <select
+          id="categoria"
+          className="text-gray-400"
+          name="category"
+          value={categoria}
+          onChange={handleCategoriaChange}
+        >
+          {categorias.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="flex">
+        <label htmlFor="descripcion">Descripción:</label>
+        <textarea
+      
+          id="descripcion"
+          className="text-gray-400 w-full"
+          name="description"
+          placeholder={producto.descripcion}
+          value={descripcion}
+          onChange={handleDescripcionChange}
+          
         />
       </div>
       <button type="submit">Guardar Cambios</button>

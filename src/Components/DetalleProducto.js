@@ -25,7 +25,7 @@ export default async function DetalleProducto({ productid }) {
           <Image
             alt="DetalleProducto"
             src={
-              "https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/main/Front/public/Asset%204.png"
+              producto.image
             }
             className="p-12"
             width={300}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Novedades from "../Components/Novedades";
 import Title from "../Components/Title";
 import Text from "../Components/Text";

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Precio from "./Precio";
-import Text from "./Text";
 import Link from "next/link";
 import Title from "./MiniTitle";
 

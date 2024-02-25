@@ -5,14 +5,14 @@ import { db } from "@/firebase/config";
 
 const categorias = ["Blend", "Origen", "Accesorios"];
 
-const editarProducto = async function (id, titulo, precio, categoria, descripcion) {
+const editarProducto = async function (slug, titulo, precio, categoria, descripcion) {
   try {
-    const docRef = doc(db, "productos", id.toString());
+    const docRef = doc(db, "productos",slug);
     await updateDoc(docRef, {
       titulo: titulo,
       precio: precio,
       categoria: categoria,
-      descripcion: descripcion // Asegúrate de tener un campo "descripcion" en tu base de datos
+      descripcion: descripcion 
     });
     return true; // Éxito en la actualización
   } catch (error) {
@@ -50,7 +50,7 @@ export default function Edición(params) {
     const confirmResult = window.confirm("¿Estás seguro de que deseas actualizar el producto?" );
     
     if (confirmResult) {
-      const updated = await editarProducto(producto.id, titulo, precio, categoria, descripcion);
+      const updated = await editarProducto(producto.slug, titulo, precio, categoria, descripcion);
       if (updated) {
         window.location.href = "/Perfil/Admin/editar";
       } else {

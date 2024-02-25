@@ -3,7 +3,7 @@ import Precio from "./Precio";
 import Link from "next/link";
 import Title from "./MiniTitle";
 
-export default function Producto({ titulo, precio, id }) {
+export default function Producto({ titulo, precio, id, image }) {
   
   return (
     <article
@@ -19,7 +19,7 @@ export default function Producto({ titulo, precio, id }) {
               alt="producto"
               width={300}
               height={479}
-              src="https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/main/Front/public/Asset%204.png"
+              src={image}
             />
           </div>
           <div className="p-3 max-w-44 min-w-28">

@@ -29,10 +29,11 @@ export default async function page(categorias) {
           {data.map((producto) => {
             return (
               <Producto
-                key={producto.id}
+                key={producto.slug}
                 titulo={producto.titulo}
+                image = {producto.image}
                 precio={`USD ${producto.precio}  `}
-                id={producto.id}
+                id={producto.slug}
               />
             );
           })}

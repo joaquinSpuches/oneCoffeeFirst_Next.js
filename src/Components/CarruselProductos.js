@@ -11,7 +11,7 @@ import Producto from "./Producto";
       {Destacados.map((e, i) => {
 
         return (
-          <Producto key={i} titulo={e.titulo} precio={e.precio} id={e.id} />
+          <Producto key={i} titulo={e.titulo} precio={e.precio} id={e.slug} />
         );
       })}
     </div>

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import {router} from "next/navigation";
 import { db, storage } from "@/firebase/config";
 
 const crearProducto = async (values, file, id, slug) => {
@@ -56,14 +57,14 @@ export default function FormularioCrear() {
 
   const handleSubmit = async (e) => {
     const slug = values.titulo + Date.now()
-    console.log(slug);
+    console.log(file);
     e.preventDefault();
     const si = window.confirm('Deseas crear el producto')
 
     if(si){
       await crearProducto(values, file, id, slug);
       
-      window.location.href = "/Perfil/Admin/editar";
+      router.back()
 
     }
   };

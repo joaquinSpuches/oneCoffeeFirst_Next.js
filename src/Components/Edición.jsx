@@ -1,17 +1,23 @@
 'use client'
 import { useState } from "react";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "@/firebase/config";
-
+import { db, storage } from "@/firebase/config";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { useRouter } from "next/navigation";
 const categorias = ["Blend", "Origen", "Accesorios"];
 
-const editarProducto = async function (slug, titulo, precio, categoria, descripcion) {
+const editarProducto = async function (slug, titulo, precio, categoria, descripcion, file) {
   try {
-    const docRef = doc(db, "productos",slug);
+    const storageRef = ref(storage,slug);
+    const fileSnapshot = await uploadBytes(storageRef, file);
+    const filerURL = await getDownloadURL(fileSnapshot.ref);
+    console.log(filerURL);
+    const docRef = doc(db, "productos", slug);
     await updateDoc(docRef, {
       titulo: titulo,
       precio: precio,
       categoria: categoria,
+      image: filerURL,
       descripcion: descripcion 
     });
     return true; // Éxito en la actualización
@@ -27,7 +33,9 @@ export default function Edición(params) {
   const [precio, setPrecio] = useState(producto.precio);
   const [categoria, setCategoria] = useState(producto.categoria);
   const [descripcion, setDescripcion] = useState(producto.descripcion);
-
+  const slug = producto.slug;
+  const [file, setFile] = useState(null);	
+  const router = useRouter();
   const handleTituloChange = (event) => {
     setTitulo(event.target.value);
   };
@@ -46,13 +54,13 @@ export default function Edición(params) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(file);
     const confirmResult = window.confirm("¿Estás seguro de que deseas actualizar el producto?" );
     
     if (confirmResult) {
-      const updated = await editarProducto(producto.slug, titulo, precio, categoria, descripcion);
+      const updated = await editarProducto(slug, titulo, precio, categoria, descripcion, file);
       if (updated) {
-        window.location.href = "/Perfil/Admin/editar";
+        router.back()
       } else {
         alert("Error al actualizar el producto.");
       }
@@ -101,6 +109,12 @@ export default function Edición(params) {
           ))}
         </select>
       </div>
+      <input
+        className="m-3"
+        
+        type="file"
+        onChange={(e) => setFile(e.target.files[0])}
+      />
       <div className="flex">
         <label htmlFor="descripcion">Descripción:</label>
         <textarea

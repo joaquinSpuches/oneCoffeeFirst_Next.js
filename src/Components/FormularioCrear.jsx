@@ -90,8 +90,8 @@ export default function FormularioCrear() {
         <option selected key="Elige" value="Elige la categoria" disabled>
           Elige la categoria
         </option>
-        {categorias.map((cat) => (
-          <option onChange={handleChange} key={cat} value={cat}>
+        {categorias.map((cat) => (//no esta funcionando el POST de categoria. CORREGIR 
+          <option onChange={handleChange} key={cat} value={cat}>    
             {cat}
           </option>
         ))}

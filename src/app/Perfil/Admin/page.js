@@ -1,4 +1,5 @@
 import FormularioCrear from '@/Components/FormularioCrear'
+import LogoutButton from '@/Components/logoutButton'
 import Link from 'next/link'
 
 
@@ -7,6 +8,7 @@ export default function page(params) {
     <ul>
       <Link href={'/Perfil/Admin/crear'}> Crear item </Link>
       <Link href={'/Perfil/Admin/editar'}> Editar item </Link>
+      <LogoutButton/>
     </ul>
   )
 };

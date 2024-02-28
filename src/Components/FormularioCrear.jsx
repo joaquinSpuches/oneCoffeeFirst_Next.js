@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import {router} from "next/navigation";
+import {useRouter} from "next/navigation";
 import { db, storage } from "@/firebase/config";
 
 const crearProducto = async (values, file, id, slug) => {
   const storageRef = ref(storage,slug);
   const fileSnapshot = await uploadBytes(storageRef, file);
   const filerURL = await getDownloadURL(fileSnapshot.ref);
-
+  
   const docRef = doc(db, "productos", slug);
   return setDoc(docRef, {
     ...values,
@@ -19,6 +19,7 @@ const crearProducto = async (values, file, id, slug) => {
   }).then(() => console.log("producto agregado!"));
 };
 export default function FormularioCrear() {
+  const router = useRouter();
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

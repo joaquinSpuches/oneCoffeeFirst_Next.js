@@ -40,7 +40,6 @@ export const AuthProvider = ({ children }) => {
   };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-        console.log(user);
         user ? setUser({logged:true, email:user.email, uid:user.uid,
             }):  setUser({logged:false,email: null,uid: null});
     });

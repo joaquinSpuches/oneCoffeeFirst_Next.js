@@ -1,5 +1,5 @@
 import FormularioCrear from '@/Components/FormularioCrear'
-import LogoutButton from '@/Components/logoutButton'
+import LogoutButton from '@/Components/LogoutButton'
 import Link from 'next/link'
 
 

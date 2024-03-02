@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useAuthContext } from "../context/AuthContext"
 
 export default function FormularioLogin() {
-    const {registerUser, loginUser} = useAuthContext()
+    const {registerUser, loginUser} = useAuthContext
     const [values, setValues] = useState ({
         email: '',
         password:''

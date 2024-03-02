@@ -19,7 +19,7 @@ export default function page (params) {
             </div>
             <ul>
               <div className="w-full h-fit bg-gray-100">
-              <Link href='/Perfil/Admin' >
+              <Link href='/Admin' >
                     <MiniTitle text='Admin' />    
                 </Link>
               </div>

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Precio from "./Precio";
 import Link from "next/link";
-import Title from "./MiniTitle";
+import Texto from "./Text";
 
 export default function Producto({ titulo, precio, id, image }) {
   
   return (
     <article
       key={Math.random()}
-      className=" self-center w-1/2 border-4 border-gray-100"
+      className=" self-center w-full h-full  border-4 border-gray-100"
     >
       <Link href={`/Productos/${id}`}>
-        <div className="bg-white  w-full rounded-md min-w-1/2 max-w-64 ">
+        <div className="bg-white h-full  md:w-96 rounded-md min-w-1/2">
           <div className="flex justify-center">
             <Image
               priority
@@ -22,9 +22,9 @@ export default function Producto({ titulo, precio, id, image }) {
               src={image}
             />
           </div>
-          <div className="p-3 max-w-44 min-w-28">
-            <Title text={titulo} />
-            <Precio text={precio} />
+          <div className="p-3  min-w-28">
+            <Texto text={titulo} />
+            <Precio text={`USD ${precio}`} />
           </div>
         </div>
       </Link>

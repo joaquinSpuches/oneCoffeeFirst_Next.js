@@ -7,7 +7,7 @@ import Producto from "./Producto";
 
   const Destacados = data.slice(0,5)
   return (
-    <div className="flex overflow-x-scroll w-full pl-4 ">
+    <div className="flex overflow-x-scroll w-full sm:h-80 pl-4 ">
       {Destacados.map((e, i) => {
 
         return (

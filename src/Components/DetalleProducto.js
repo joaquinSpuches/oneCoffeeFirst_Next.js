@@ -43,6 +43,7 @@ export default async function DetalleProducto({ productid }) {
         item={{
           titulo: producto.titulo,
           precio: producto.precio,
+          image: producto.image,
         }}
       />
     </article>

@@ -7,19 +7,21 @@ import { useRouter } from "next/navigation";
 const categorias = ["Blend", "Origen", "Accesorios"];
 
 const editarProducto = async function (slug, titulo, precio, categoria, descripcion, file) {
-  try {
+  if(file === null){ // Si no se sube una imagen, se actualiza sin ella para que no reemplaze la ya existente
+    var data = { titulo, precio, categoria, descripcion };
+    
+  }else{ // Si se sube una imagen, se actualiza con ella
     const storageRef = ref(storage,slug);
-    const fileSnapshot = await uploadBytes(storageRef, file);
-    const filerURL = await getDownloadURL(fileSnapshot.ref);
-    console.log(filerURL);
+  const fileSnapshot = await uploadBytes(storageRef, file);
+  const filerURL = await getDownloadURL(fileSnapshot.ref);
+  console.log(filerURL);
+  var data = { titulo, precio, categoria, image: filerURL, descripcion };
+  }
+  try {
+  
+    
     const docRef = doc(db, "productos", slug);
-    await updateDoc(docRef, {
-      titulo: titulo,
-      precio: precio,
-      categoria: categoria,
-      image: filerURL,
-      descripcion: descripcion 
-    });
+    await updateDoc(docRef, data);
     return true; // Éxito en la actualización
   } catch (error) {
     console.error("Error al actualizar el producto:", error);
@@ -60,7 +62,7 @@ export default function Edición(params) {
     if (confirmResult) {
       const updated = await editarProducto(slug, titulo, precio, categoria, descripcion, file);
       if (updated) {
-        router.back()
+        window.location.href ="/Admin/editar"
       } else {
         alert("Error al actualizar el producto.");
       }

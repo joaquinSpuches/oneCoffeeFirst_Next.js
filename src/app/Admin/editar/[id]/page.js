@@ -5,7 +5,7 @@ export default async function page(id) {
     console.log(id);
     
     const producto = await fetch(`http://Localhost:3000/api/productos/${productoid}`,{
-        cache: 'no-cache'
+        cache: 'no-store'
     }).then((r)=>r.json())
     return(
         <Edición producto={ producto}/>

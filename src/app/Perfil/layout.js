@@ -1,9 +1,18 @@
 
+'use client'
 
-import { useAuthContext } from "@/Components/context/AuthContext";
+import { useAuthContext } from "@/Components/context/AuthContext"
 
-export default function AdminLayout({ children, login }) {
+const ProfileLayout = ({children, login})=>{
+ const {user } = useAuthContext()
 
-
-  return <>{children}</>;
+ return(
+    <>
+    {
+        user.logged ? children : login
+    }
+    </>
+ )
 }
+
+export default ProfileLayout;

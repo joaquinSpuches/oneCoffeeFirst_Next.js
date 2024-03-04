@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ProductoDestacado({ params }) {
   return (
     <Link
-      href={`/Productos/1`}
+      href={`/Productos/Etiopia1709565415632`}
       className="flex justify-between items-center p-10 bg-white rounded-md mx-6"
     >
       <article>

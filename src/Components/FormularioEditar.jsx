@@ -32,7 +32,7 @@ const FormularioEditar = async function () {
                 <td>100</td>
                 <td>
                   <Link href={`editar/${e.slug}`}>Editar</Link>
-                 <BotonEliminar id ={e.id}  />
+                 <BotonEliminar slug ={e.slug}  />
                 </td>
               </tr>
             );

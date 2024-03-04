@@ -2,10 +2,10 @@
 
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase/config";
-const BotonEliminar = async function ({ id }) {
- 
-  const eliminarProducto = async (id) => {
-    await deleteDoc(doc(db, "productos", id.toString()));
+const BotonEliminar = async function ({ slug }) {
+  console.log(slug);
+  const eliminarProducto = async (slug) => {
+    await deleteDoc(doc(db, "productos", slug));
   };
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -15,9 +15,9 @@ const BotonEliminar = async function ({ id }) {
     );
 
     if (confirmResult) {
-      await eliminarProducto(id);
+      await eliminarProducto(slug);
 
-      window.location.href = "/Perfil/Admin/editar";
+      window.location.reload();
     }
   };
 

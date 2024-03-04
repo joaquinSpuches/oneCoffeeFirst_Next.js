@@ -2,7 +2,8 @@
 import { useEffect, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import {router} from "next/navigation";
+
+import { useRouter } from "next/navigation";
 import { db, storage } from "@/firebase/config";
 
 const crearProducto = async (values, file, id, slug) => {
@@ -19,6 +20,7 @@ const crearProducto = async (values, file, id, slug) => {
   }).then(() => console.log("producto agregado!"));
 };
 export default function FormularioCrear() {
+  const router = useRouter();
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

@@ -10,7 +10,7 @@ export default function HeaderDetalle() {
         <BotonAtras />
       </div>
       <Link href="/">
-        <Image alt="logo" src={"/logo.svg"} width={100} height={100} />
+        <Image priority alt="logo" src={"/logo.svg"} width={100} height={34} />
       </Link>
       <Link href={"/Carrito"}>
         <div className="p-5">

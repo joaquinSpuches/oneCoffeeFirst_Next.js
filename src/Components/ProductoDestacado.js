@@ -5,9 +5,9 @@ export default function ProductoDestacado({ params }) {
   return (
     <Link
       href={`/Productos/Etiopia1709565415632`}
-      className="flex justify-between items-center p-10 bg-white rounded-md mx-6"
+      className=" w-[40vw]"
     >
-      <article>
+      <article className="flex justify-between items-center p-10 bg-white rounded-md mx-6">
         <div>
         <div className="text-2xl font-extrabold">
           <h1>

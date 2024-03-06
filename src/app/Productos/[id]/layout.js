@@ -20,7 +20,7 @@ export default function layout({ children }) {
         </div>
 
        <Suspense fallback={<p>cargado...</p>}>
-       <CarruselProductos titulo="Guatemala" precio='9.99' id='2' />
+       <CarruselProductos categoria='Todos'/>
        </Suspense>
       </div>
     </div>

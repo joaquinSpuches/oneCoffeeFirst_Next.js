@@ -10,7 +10,7 @@ export default function HeaderDetalle() {
         <BotonAtras />
       </div>
       <Link href="/">
-        <Image priority alt="logo" src={"https://firebasestorage.googleapis.com/v0/b/onecoffeefirst-5da09.appspot.com/o/Logo.svg?alt=media&token=c1833c26-9a1a-4566-abea-6db4cbf75235"} width={100} height={34} />
+        <Image priority alt="logo" unoptimized src={"https://firebasestorage.googleapis.com/v0/b/onecoffeefirst-5da09.appspot.com/o/Logo.svg?alt=media&token=c1833c26-9a1a-4566-abea-6db4cbf75235"} width={100} height={34} />
       </Link>
       <Link href={"/Carrito"}>
         <div className="p-5">

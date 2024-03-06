@@ -29,7 +29,7 @@ export default async function DetalleProducto({ productid }) {
             }
             
             width={300}
-            height={479}
+            height={534}
           />
         </div>
       </div>

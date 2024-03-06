@@ -8,7 +8,7 @@ import { useCartContext } from "./context/cartcontext";
 export default function CarritoProduct(params) {
     const {cart} = useCartContext()
    
-    console.log(cart);
+    
 
     return(
        <div>

@@ -4,7 +4,7 @@ import { db } from '../../../../firebase/config';
 
 export async function GET(request, {params} ) {
     const {id} = params
-    console.log(id);
+   
   const productosRef = doc(db, 'productos', id);
   
   const docSnapshot = await getDoc(productosRef)

@@ -2,8 +2,8 @@
 
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase/config";
-const BotonEliminar = async function ({ slug }) {
-  console.log(slug);
+const BotonEliminar = function ({ slug }) {
+  
   const eliminarProducto = async (slug) => {
     await deleteDoc(doc(db, "productos", slug));
   };

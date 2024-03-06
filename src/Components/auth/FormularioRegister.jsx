@@ -3,10 +3,9 @@
 import { useState } from "react"
 import { useAuthContext } from "../context/AuthContext"
 import BotonAtras from "../BotonAtras"
-import Link from "next/link"
 
-export default function FormularioLogin() {
-    const { loginUser} = useAuthContext()
+export default function FormularioRegister() {
+    const {registerUser} = useAuthContext()
     const [values, setValues] = useState ({
         email: '',
         password:''
@@ -25,15 +24,15 @@ export default function FormularioLogin() {
 
     return(
       <div className="flex justify-center h-screen ">
-                <BotonAtras/>
-         <div className="z-1 w-1/2 flex flex-col justify-center items-center">
+            <BotonAtras/>
+                     <div className="z-1 w-1/2 flex flex-col justify-center items-center">
             <form className="flex flex-col bg-orange-200 p-3 rounded-md gap-5" onSubmit={handleSubmit}>
-                <h2>login</h2>
+                <h2>Register</h2>
                 <input type="email"
                 value={values.email}
                 required
                 className="rounded-md p-2 w-52"
-                placeholder="Tu email"
+                placeholder="Email"
                 name="email"
                 onChange={handleChange} 
                 />
@@ -41,14 +40,12 @@ export default function FormularioLogin() {
                 value={values.password}
                 required
                 className="rounded-md p-2 w-52"
-                placeholder="Tu password"
+                placeholder="Password"
                 name="password"
                 onChange={handleChange }
                  />
-                 <button className="rounded-md p-2 w-52 border-solid border-2 border-cyan-800 "  onClick={()=> loginUser(values)}>Ingresar</button>
-                 <Link href={'/Register'}>
-                  <button className="rounded-md p-2 w-52 border-solid border-2 border-cyan-800 "    >Registrar </button>
-                  </Link>
+                 
+                 <button className="rounded-md p-2 w-52 border-solid border-2 border-cyan-800 "   onClick={()=>registerUser(values)}>Registrar </button>
             </form>
        </div>
       </div>

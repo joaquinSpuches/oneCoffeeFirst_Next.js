@@ -3,8 +3,9 @@ import { deleteDoc,doc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 import BotonEliminar from "./BotonEliminar";
 const FormularioEditar = async function () {
-  const data = await fetch("http://Localhost:3000/api/productos", {
-    cache: "no-cache",
+  const data = await fetch(
+  process.env.URL + "/api/productos", {
+    cache: "no-store",
   }).then((r) => r.json());
 
 

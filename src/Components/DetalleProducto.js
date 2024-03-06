@@ -8,8 +8,8 @@ import BotonAñadir from "./BotonAñadir";
 
 export default async function DetalleProducto({ productid }) {
 
-  const data = await fetch(`http://Localhost:3000/api/productos/${productid}`, {
-    cache: "no-cache",
+  const data = await fetch(process.env.URL + `/api/productos/${productid}`, {
+    cache: "no-store",
   }).then((r) => r.json());
 
   const producto = data;

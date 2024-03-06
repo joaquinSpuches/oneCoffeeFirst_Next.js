@@ -3,8 +3,7 @@ import FormularioLogin from "@/Components/auth/FormularioLogin"
 // Fixies error 404 not found when reloading the page   
 export default function Default(params) {
     return(
-        <div>
-            <FormularioLogin/>
+        <div><h1>Acceso denegado</h1><a href="/">Ir al inicio</a>
         </div>
     )
 };

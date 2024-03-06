@@ -25,8 +25,8 @@ export default function FormularioCrear() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/productos', {
-          cache: 'no-cache'
+        const response = await fetch(process.env.URL + '/api/productos', {
+          cache: 'no-store'
         });
         const data = await response.json();
         

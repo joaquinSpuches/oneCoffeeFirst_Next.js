@@ -1,8 +1,8 @@
 import Producto from "./Producto";
 
   export default async function CarruselProductos({ titulo, precio, id }) {
-  const data = await fetch(`http://Localhost:3000/api/productos`, {
-    cache: "no-cache",
+  const data = await fetch(process.env.URL + '/api/productos', {
+    cache: "no-store",
   }).then((r) => r.json());
 
   const Destacados = data.slice(0,5)

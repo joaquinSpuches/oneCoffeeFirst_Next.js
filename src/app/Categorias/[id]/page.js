@@ -7,9 +7,9 @@ export default async function page(categorias) {
   const categoria = categorias.params.id;
 
   const data = await fetch(
-    `http://localhost:3000/api/categorias/${categoria}`,
+    process.env.URL + `/api/categorias/${categoria}`,
     {
-      cache: "no-cache",
+      cache: "no-store",
     }
   ).then((r) => r.json());
   if (data[0] === undefined ){

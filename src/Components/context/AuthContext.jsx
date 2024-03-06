@@ -30,13 +30,18 @@ export const AuthProvider = ({ children }) => {
     await signOut(auth);
   }
   const loginUser = async (values) => {
-    await signInWithEmailAndPassword(
-      auth,
-      values.email,
-      values.password
-    );
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      );
 
+    } catch (error) {
+      
+      alert("Error al iniciar sesión:" + error.message);
     
+    }
   };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {

@@ -12,7 +12,7 @@ export default function Novedades() {
       <nav className="p-5 w-full">
         <Filtro params={["Origen", "Blend", "Accesorios", "Todos"]} />
       </nav>
-    <div className="flex flex-col sm:flex-row items-center w-screen rounded-lg  bg-gray-100">
+    <div className="flex flex-col  sm:flex-row items-center w-screen rounded-lg  bg-gray-100">
     <ProductoDestacado params="Etiopia" />
      <Carruseles />
     </div>

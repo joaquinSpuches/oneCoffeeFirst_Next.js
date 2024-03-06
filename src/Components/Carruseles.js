@@ -6,7 +6,7 @@ import { Suspense } from "react";
 export default function Carruseles(params) {
     
     return(
-        <div className="w-[60vw]">
+        <div className="md:w-[60vw] w-screen">
          <Link
         href="/Categorias/Origen"
         className="justify-between w-full pt-3 px-6 flex "

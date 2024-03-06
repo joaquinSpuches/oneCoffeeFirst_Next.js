@@ -9,7 +9,7 @@ import { useAuthContext } from "./context/AuthContext"
 export default function ProfileData(params) {
 
     const {user} = useAuthContext()
-    console.log(user);
+
 
 return(
     <div className="flex justify-arround ">

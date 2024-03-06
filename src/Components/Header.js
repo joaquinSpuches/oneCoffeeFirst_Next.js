@@ -9,10 +9,10 @@ export default function Header(params) {
       
        <Link href='/' ><Image 
        alt='logo'
-       src={'/logo.svg'} width={100} height={34} priority
+       src={'@/public/static/logo.svg'} width={100} height={34} priority
        /></Link>
         <Link href='/Perfil' className="flex flex-col items-center"> <Image  alt="perfil"
-        src={'/avatar.png'} width={25} height={25} className="p-1" /><p className=" text-center text-xs">Perfil</p>
+        src={'@/public/static/avatar.png'} width={25} height={25} className="p-1" /><p className=" text-center text-xs">Perfil</p>
      </Link>
         </header>
     )

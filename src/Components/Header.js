@@ -11,8 +11,8 @@ export default function Header(params) {
        alt='logo'
        src={'/logo.svg'} width={100} height={34} priority
        /></Link>
-        <Link href='/Perfil'> <Image  alt="perfil"
-        src={'/avatar.png'} width={40} height={50} className="p-1" />
+        <Link href='/Perfil' className="flex flex-col items-center"> <Image  alt="perfil"
+        src={'/avatar.png'} width={25} height={25} className="p-1" /><p className=" text-center text-xs">Perfil</p>
      </Link>
         </header>
     )

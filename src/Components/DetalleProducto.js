@@ -20,14 +20,14 @@ export default async function DetalleProducto({ productid }) {
     >
       <Precio text={`USD ${producto.precio}`} />
       <Title text={`${producto.titulo}`} />
-      <div className="pb-10">
+      <div className="pb-10 w-full">
         <div className=" mb-7 rounded-md bg-gray-100 flex justify-center px-10 ">
           <Image
             alt="DetalleProducto"
             src={
               producto.image
             }
-            className="p-12"
+            
             width={300}
             height={479}
           />

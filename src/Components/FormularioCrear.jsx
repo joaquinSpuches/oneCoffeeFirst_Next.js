@@ -42,7 +42,7 @@ export default function FormularioCrear() {
 
   const id = productos.length + 1 
 
-  console.log(id);
+  
   const [file, setFile] = useState(null);
   const [values, setValues] = useState({
     categoria: "",
@@ -58,9 +58,10 @@ export default function FormularioCrear() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     const slug = values.titulo + Date.now()
     console.log(file);
-    e.preventDefault();
+    console.log(values);
     const si = window.confirm('Deseas crear el producto')
 
     if(si){
@@ -86,15 +87,16 @@ export default function FormularioCrear() {
         id="categoria"
         required
         className="m-3"
-        name="category"
-        placeholder="Elige la categoria"
+        name="categoria"
+        onChange={handleChange}
+        defaultValue={"Elige la categoria"}
         
       >
-        <option selected key="Elige" value="Elige la categoria" disabled>
+        <option value='Elige la categoria' key="Elige"  disabled>
           Elige la categoria
         </option>
         {categorias.map((cat) => (//no esta funcionando el POST de categoria. CORREGIR 
-          <option onChange={handleChange} key={cat} value={cat}>    
+          <option key={cat} value={cat}>    
             {cat}
           </option>
         ))}

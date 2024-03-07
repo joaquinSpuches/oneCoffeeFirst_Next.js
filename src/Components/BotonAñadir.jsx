@@ -7,6 +7,7 @@ export default function BotonAñadir(item) {
    
   const handleSubmit = () => {
     addToCart({ ...item });
+    alert("Producto añadido al carrito");
   };
   
 

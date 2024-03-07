@@ -7,7 +7,7 @@ const FormularioEditar = async function () {
   process.env.URL + "/api/productos", {
     cache: "no-store",
   }).then((r) => r.json());
-
+  console.log(data);
 
 
   

@@ -18,7 +18,6 @@ export default async function DetalleProducto({ productid }) {
       key={productid}
       className=" p-5 bg-white flex flex-col items-center "
     >
-      <Precio text={`USD ${producto.precio}`} />
       <Title text={`${producto.titulo}`} />
       <div className="pb-10 w-full">
         <div className=" mb-7 rounded-md bg-gray-100 flex justify-center px-10 ">
@@ -34,6 +33,7 @@ export default async function DetalleProducto({ productid }) {
         </div>
       </div>
       <div className=" max-w-2xl">
+            <Precio text={`USD ${producto.precio}`} />
         <MiniTitle text={`${producto.titulo}`} />
         <Text text= {`${producto.descripcion}`} />
       

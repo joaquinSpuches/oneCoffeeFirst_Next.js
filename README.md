@@ -1,5 +1,5 @@
 
-https://one-coffee-first-next-js.vercel.app/
+https://onecoffeefirst.vercel.app/
 
 
 

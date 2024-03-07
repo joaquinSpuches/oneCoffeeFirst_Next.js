@@ -11,7 +11,7 @@ export default function layout({ children }) {
       <div className="  pb-24 bg-gray-100">
         <div className="justify-start w-full p-5">
           <Link
-            href={"/Productos"}
+            href={"/Categorias/Todos"}
             className="justify-between w-full pt-3  flex "
           >
             <Text text="Destacados de origen" />

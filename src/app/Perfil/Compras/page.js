@@ -4,7 +4,7 @@ import { useAuthContext } from '@/Components/context/AuthContext';
 import Title from '@/Components/Title';
 export default async function page(params) {
     const data =await   fetch(
-        process.env.URL + "api/ventas", {
+        process.env.URL + "/api/mis-compras", {
           cache: "no-store",
         }).then((r) => r.json()).catch((e)=>console.log(e));
     

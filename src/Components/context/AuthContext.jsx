@@ -7,10 +7,12 @@ import {
   signInWithEmailAndPassword,
   signOut
 } from "firebase/auth";
+import { useCartContext } from "./cartcontext";
 const AuthContext = createContext();
 
 export const useAuthContext = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
+  
   const [user, setUser] = useState({
     logged: false,
     email: null,
@@ -27,6 +29,8 @@ export const AuthProvider = ({ children }) => {
     
   };
   const logOut = async () =>{
+    
+    localStorage.removeItem('cart')
     await signOut(auth);
   }
   const loginUser = async (values) => {

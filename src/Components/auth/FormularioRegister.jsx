@@ -18,8 +18,9 @@ export default function FormularioRegister() {
         }) 
     }
 
-    const handleSubmit = async(e)=>{ 
+    const handleSubmit = (e)=>{ 
     e.preventDefault();
+    console.log(registerUser(values));
 }
 
     return(
@@ -45,7 +46,7 @@ export default function FormularioRegister() {
                 onChange={handleChange }
                  />
                  
-                 <button className="rounded-md p-2 w-52 border-solid border-2 border-cyan-800 "   onClick={()=>registerUser(values)}>Registrar </button>
+                 <button className="rounded-md p-2 w-52 border-solid border-2 border-cyan-800 " >Registrar </button>
             </form>
        </div>
       </div>

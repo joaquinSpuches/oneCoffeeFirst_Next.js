@@ -2,12 +2,14 @@ import Link from "next/link";
 import MiniTitle from "../../Components/MiniTitle"
 import ProfileData from "../../Components/ProfileData"
 import LogoutButton from "@/Components/LogoutButton";
+import HeaderDetalle from "@/Components/HeaderDetalle";
 
 export default function page (params) {
   
 
     return(
         <div className="mt-12">
+          <HeaderDetalle/>
       <div className="flex justify-between p-5">
                 <ProfileData/>
                 <LogoutButton/></div>

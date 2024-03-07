@@ -5,14 +5,23 @@ import Image from "next/image";
 import MiniTitle from './MiniTitle';
 import { useAuthContext } from "./context/AuthContext";
 import { useCartContext } from "./context/cartcontext";
+import BotonComprar from "./BotonComprar";
 export default function CarritoProduct(params) {
     const {cart} = useCartContext()
-   
+    const {deleteFromCart} = useCartContext()
     
-
     return(
-       <div>
+        <div>
+        <BotonComprar />
         {cart.map((e,i)=>{
+            
+            const handleDelete =async (e) => {
+                //e.target.id es el id del item a eliminar
+                    deleteFromCart(e.target.id);   
+                 }
+             
+          
+             
             return (
                 <div key={i} className="flex justify-between border-b-2 border-gray-400">
             
@@ -26,18 +35,23 @@ export default function CarritoProduct(params) {
                          <MiniTitle text={cart[i].item.titulo} />
                          <Precio text={cart[i].item.precio} />
                      </div>
-                     <Contador />
+                     {/*
+                   
+                     <Contador /> //  No esta implementado el contador en el carrito. 
+                     
+                     */}
                  </div>
                 </div>
                  <div className="self-end m-4">
-                     <div>
-                         <Image width={20} height={30} alt='eliminar' src="https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/04b416a9dbb2a213977d4581f768c05b6c8754f7/Front/public/trash.svg" />
+                     <div onClick={handleDelete} >
+                         <Image id={i}  width={20} height={30} alt='eliminar' src="https://raw.githubusercontent.com/joaquinSpuches/oneCoffeeFirst/04b416a9dbb2a213977d4581f768c05b6c8754f7/Front/public/trash.svg" />
                      </div>
                  </div>
                  
              </div>
             )
         })}
+        
        </div>
     )
 };

@@ -10,16 +10,17 @@ export default function BotonComprar() {
     const docRef = doc(db, "ventas", Date.now().toString())
   
     const handleSubmit = () => {
+      const ticket = {cart}
       const ConfirmarCompra = window.confirm(
         "¿Estás seguro de que deseas finalizar la compra?"
       );
         // si al comprar el comrpador no esta logeado le pide que se logee antes
         if(user.logged){
-                
+          console.log(ticket);
           if (ConfirmarCompra) {
             
             setDoc(docRef, {
-              ...cart,
+              ...ticket,
               user: user.uid}).then(() => {
                 setCart([]) //reinicia el carrito una vez que se finaliza la compra
                 console.log(cart);

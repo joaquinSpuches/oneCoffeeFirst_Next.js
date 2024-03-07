@@ -32,7 +32,7 @@ export default async function page(categorias) {
                 key={producto.slug}
                 titulo={producto.titulo}
                 image = {producto.image}
-                precio={`USD ${producto.precio}  `}
+                precio={producto.precio}
                 id={producto.slug}
               />
             );

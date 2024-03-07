@@ -13,6 +13,6 @@ export default function LogoutButton() {
         
     }
     return(
-        <button onClick={handleClick} className="bg-red-500 p-3 rounded-lg w-52 self-center">Cerrar sesion</button>
+        <button onClick={handleClick} className=" text-red-600">Cerrar sesion</button>
     )
 };

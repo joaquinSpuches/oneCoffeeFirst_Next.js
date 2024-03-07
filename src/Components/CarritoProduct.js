@@ -6,10 +6,11 @@ import MiniTitle from './MiniTitle';
 import { useAuthContext } from "./context/AuthContext";
 import { useCartContext } from "./context/cartcontext";
 import BotonComprar from "./BotonComprar";
+import Title from "./Title";
 export default function CarritoProduct(params) {
     const {cart} = useCartContext()
     const {deleteFromCart} = useCartContext()
-    
+    let total = 0;
     return(
         <div>
         <BotonComprar />
@@ -20,14 +21,14 @@ export default function CarritoProduct(params) {
                     deleteFromCart(e.target.id);   
                  }
              
-          
+            total += Number(cart[i].item.precio)
              
             return (
                 <div key={i} className="flex justify-between border-b-2 border-gray-400">
             
                 <div className="flex">
                 <div className="w-28 flex justify-center m-4 p-4 bg-gray-100 rounded-md ">
-                 <Image src={cart[i].item.image} height={479} width={300} className="h-20" alt='Foto del producto'/>
+                 <Image src={cart[i].item.image} height={479} width={300} className="h-20 object-contain" alt='Foto del producto'/>
                  </div>
                  <div className="flex flex-col justify-around">
                      <div>
@@ -51,6 +52,7 @@ export default function CarritoProduct(params) {
              </div>
             )
         })}
+        <Title text={`Total: ${total}`} />
         
        </div>
     )

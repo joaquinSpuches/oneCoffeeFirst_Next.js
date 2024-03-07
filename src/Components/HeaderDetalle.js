@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import BotonAtras from "./BotonAtras";
 import CarritoCounter from "./CarritoCounter";
+import LogoutButton from "./LogoutButton";
 
 export default function HeaderDetalle() {
   return (
@@ -25,6 +26,7 @@ export default function HeaderDetalle() {
           <CarritoCounter />
         </div>
       </Link>
+
     </header>
   );
 }

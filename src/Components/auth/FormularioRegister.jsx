@@ -18,11 +18,17 @@ export default function FormularioRegister() {
         }) 
     }
 
-    const handleSubmit = (e)=>{ 
-    e.preventDefault();
-    console.log(registerUser(values));
-}
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await registerUser(values);
+            
+        } catch (error) {
+            console.log(error);
+            alert(`Error: ${error}`);
+         
+        }
+    };
     return(
       <div className="flex justify-center h-screen ">
             <BotonAtras/>

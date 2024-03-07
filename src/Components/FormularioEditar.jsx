@@ -5,9 +5,8 @@ import BotonEliminar from "./BotonEliminar";
 const FormularioEditar = async function () {
  
   const data = await fetch(
-  process.env.URL + "/api/productos", {
+  process.env.URL + "/api/categorias/Todos", {
     cache: "no-store",
-    next: { revalidate: 5 }
   }).then((r) => r.json());
   console.log(data);
 

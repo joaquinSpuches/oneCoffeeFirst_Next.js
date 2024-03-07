@@ -5,6 +5,9 @@ const nextConfig = {
             protocol: 'https',
             hostname:'**',       }]
     },
+    isr:{
+        expiration:10
+    }
 }
 
 export default nextConfig;

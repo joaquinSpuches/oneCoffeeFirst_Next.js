@@ -14,7 +14,7 @@ export default function BotonComprar() {
       const ConfirmarCompra = window.confirm(
         "¿Estás seguro de que deseas finalizar la compra?"
       );
-        // si al comprar el comrpador no esta logeado le pide que se logee antes
+      if(ConfirmarCompra){   // si al comprar el comrpador no esta logeado le pide que se logee antes
         if(user.logged){
           console.log(ticket);
           if (ConfirmarCompra) {
@@ -37,7 +37,7 @@ export default function BotonComprar() {
             // si no esta logeado lo redirige a la pagina de login
             window.location.href = '/Perfil'
         
-    }}
+    }}}
 
     
     

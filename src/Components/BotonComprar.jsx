@@ -20,6 +20,7 @@ export default function BotonComprar() {
           setDoc(docRef, {
             ...ticket,
             user: user.uid,
+            fecha: Date.now(),
           }).then(() => {
             setCart([]); //reinicia el carrito una vez que se finaliza la compra
             alert('compra realizada con exito') //mensaje de confirmacion de compra

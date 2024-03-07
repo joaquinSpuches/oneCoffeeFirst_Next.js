@@ -1,4 +1,5 @@
 'use client'
+import HeaderDetalle from "@/Components/HeaderDetalle";
 import FormularioLogin from "@/Components/auth/FormularioLogin";
 import { useState } from 'react';
 export default function LoginLayout(params) {
@@ -11,6 +12,7 @@ export default function LoginLayout(params) {
 
     return (
         <div>
+            <HeaderDetalle />
             {showDenied ? (
               <FormularioLogin/>
             ) : (

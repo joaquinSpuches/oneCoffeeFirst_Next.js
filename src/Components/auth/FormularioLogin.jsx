@@ -25,7 +25,6 @@ export default function FormularioLogin() {
 
     return(
       <div className="flex justify-center h-screen ">
-                <BotonAtras/>
          <div className="z-1 w-1/2 flex flex-col justify-center items-center">
             <form className="flex flex-col bg-orange-200 p-3 rounded-md gap-5" onSubmit={handleSubmit}>
                 <h2>login</h2>

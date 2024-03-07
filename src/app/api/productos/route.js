@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { collection, getDocs, query, where } from "firebase/firestore"; 
-import { db } from '../../../firebase/config';
+import { db } from '@/firebase/config';
 
 export async function GET() {
   const productosRef = collection(db, 'productos');
-  const q = query(productosRef)
+  const q = productosRef
   const querySnapshot = await getDocs(q);
 
   const docs = querySnapshot.docs.map(doc => doc.data());
@@ -13,7 +13,7 @@ export async function GET() {
   return NextResponse.json(docs);
 
   
-}
+} 
 
 // import { NextResponse } from "next/server";
 

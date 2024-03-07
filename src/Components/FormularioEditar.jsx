@@ -3,6 +3,7 @@ import { deleteDoc,doc } from "firebase/firestore";
 import { db } from "@/firebase/config";
 import BotonEliminar from "./BotonEliminar";
 const FormularioEditar = async function () {
+ 
   const data = await fetch(
   process.env.URL + "/api/productos", {
     cache: "no-store",
@@ -26,7 +27,7 @@ const FormularioEditar = async function () {
         <tbody>
           {data.map((e) => {
             return (
-              <tr className=" text-center " key={e.id}>
+              <tr className=" text-center " key={e.slug}>
                 <td>{e.titulo}</td>
                 <td>{e.precio}</td>
                 <td>{e.categoria}</td>

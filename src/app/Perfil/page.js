@@ -7,7 +7,7 @@ import HeaderDetalle from "@/Components/HeaderDetalle";
 export default function page(params) {
   return (
     <div className="flex flex-col">
-      <div className="w-1/2 self-center">
+      <div className="sm:w-1/2 self-center">
         <HeaderDetalle />
         <div className="flex justify-between p-5">
           <ProfileData />

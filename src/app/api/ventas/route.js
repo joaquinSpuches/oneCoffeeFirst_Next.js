@@ -4,7 +4,7 @@ import { db } from '../../../firebase/config';
 
 export async function GET() {
   const productosRef = collection(db, 'ventas');
-  const q = query(productosRef)
+  const q = productosRef
   const querySnapshot = await getDocs(q);
 
   const docs = querySnapshot.docs.map(doc => doc.data());

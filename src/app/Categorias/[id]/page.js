@@ -26,7 +26,7 @@ export default async function page(categorias) {
         <br />
         <Filtro params={["Origen", "Blend", "Accesorios", "Todos"]} />
         <div className="flex justify-center">
-        <ul className="flex  flex-wrap justify-start  m-5 ">
+        <ul className="flex  flex-wrap justify-center  m-5 ">
           {data.map((producto) => {
             return (
               <Producto

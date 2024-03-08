@@ -11,7 +11,7 @@ export default function Producto({ titulo, precio, id, image }) {
       className="transition ease-in hover:scale-105  self-center w-auto m-[0.7rem]"
     >
       <Link href={`/Productos/${id}`}>
-        <div className="bg-white h-full md:h-full  md:w-60 w-44 rounded-md min-w-full">
+        <div className="bg-white h-full md:h-full  md:w-60 w-40 rounded-md min-w-full">
           <div className="flex object-fill h-44 justify-center">
             <Image
               priority

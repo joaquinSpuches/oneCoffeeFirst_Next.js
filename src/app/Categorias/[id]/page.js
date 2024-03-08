@@ -18,14 +18,15 @@ export default async function page(categorias) {
     </div>)
   }else { 
   return (
-    <div>
+    <div className="md:mx-[20vw]">
       <div className="p-5">
         <Title text={data[0].categoria} />
       </div>
-      <div className="bg-gray-100 rounded-lg">
+      <div className="bg-gray-100 rounded-lg pb-5">
         <br />
         <Filtro params={["Origen", "Blend", "Accesorios", "Todos"]} />
-        <ul className="flex  flex-wrap justify-center ">
+        <div className="flex justify-center">
+        <ul className="flex  flex-wrap justify-start  m-5 ">
           {data.map((producto) => {
             return (
               <Producto
@@ -38,6 +39,7 @@ export default async function page(categorias) {
             );
           })}
         </ul>
+        </div>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ export default function ListaComprados({data}) {
            )})}
                         
                     </ul>
-                    <p className=" font-bold ">Total: USD {total}</p>
+                    <p className=" font-bold ">Total: USD {total.toFixed(2)}</p>
                     </div>
             )
             }

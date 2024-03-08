@@ -13,7 +13,7 @@ export default function HeaderDetalle() {
       <Link href="/">
         <Image priority alt="logo" unoptimized src={"https://firebasestorage.googleapis.com/v0/b/onecoffeefirst-5da09.appspot.com/o/Logo.svg?alt=media&token=c1833c26-9a1a-4566-abea-6db4cbf75235"} width={100} height={34} />
       </Link>
-      <Link href={"/Carrito"}>
+      <Link className="transition ease-in hover:scale-105" href={"/Carrito"}>
         <div className="p-5">
           <Image
             alt="carrito de compras"

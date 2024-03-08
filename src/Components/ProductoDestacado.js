@@ -5,17 +5,18 @@ export default function ProductoDestacado({ params }) {
   return (
     <Link
       href={`/Productos/Etiopia1709565415632`}
-      className=" md:w-[40vw] w-full"
+      className=" md:w-[40vw] w-full transition ease-in hover:scale-105"
     >
-      <article className="flex justify-between md:flex-row flex-col-reverse items-center p-10 bg-white rounded-md mx-6">
+      <article className="flex justify-between md:flex-row-reverse
+       flex-col-reverse items-center p-10 bg-white rounded-md mx-6">
         <div className="flex md:flex-col items-center">
-        <div className="text-2xl font-extrabold">
+        <div className="text-2xl md:text-5xl  font-extrabold">
           <h1>
             {" "}
             ETIOPIA <br /> ORIGEN <br /> ACACIA{" "}
           </h1>
         </div>
-        <h1 className="text-red-500 text-xl font-bold p-5 border-solid border-red-500 border-2 rounded-lg m-4 ">USD 9,99</h1>
+        <h1 className=" transition ease-in hover:bg-red-600 hover:text-white text-red-500 text-xl font-bold p-5 border-solid border-red-500 border-2 rounded-lg m-4 ">USD 9,99</h1>
       </div>
       <div className="flex justify-center">
         <Image

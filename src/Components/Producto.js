@@ -8,7 +8,7 @@ export default function Producto({ titulo, precio, id, image }) {
   return (
     <article
       key={Math.random()}
-      className=" self-center w-auto   border-4 border-gray-100"
+      className="transition ease-in hover:scale-105  self-center w-auto m-[0.7rem]"
     >
       <Link href={`/Productos/${id}`}>
         <div className="bg-white h-full md:h-full  md:w-60 w-44 rounded-md min-w-full">

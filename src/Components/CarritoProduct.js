@@ -52,7 +52,9 @@ export default function CarritoProduct(params) {
              </div>
             )
         })}
-        <Title text={`Total: ${total}`} />
+       <div className="m-5">
+       <Title text={`Total: ${total.toFixed (2)}`} />
+       </div>
         
        </div>
     )
